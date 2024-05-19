@@ -104,7 +104,7 @@ class MainActivity : AppCompatActivity() {
                     val checkedItems = booleanArrayOf(false, false, false, false, false)
                     val builder: AlertDialog.Builder = AlertDialog.Builder(this)
                     builder
-                        .setTitle("Pilih yang ingin ditampilkan")
+                        .setTitle("Data ditampilkan berdasarkan :")
                         .setPositiveButton("Pilih") { dialog, which ->
                             val mydata = if (checkedItems[0]) 1 else null
 
