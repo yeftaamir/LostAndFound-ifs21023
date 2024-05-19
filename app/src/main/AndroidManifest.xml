@@ -10,9 +10,9 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/lf_logo"
+        android:icon="@drawable/lofo"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/lf_logo"
+        android:roundIcon="@drawable/lofo"
         android:supportsRtl="true"
         android:theme="@style/Theme.LostFounds"
         tools:targetApi="31">
