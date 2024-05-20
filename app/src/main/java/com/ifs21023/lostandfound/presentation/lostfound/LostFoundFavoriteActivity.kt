@@ -66,11 +66,11 @@ class LostFoundFavoriteActivity : AppCompatActivity() {
         observeGetLostFounds()
     }
     private fun observeGetLostFounds() {
-        viewModel.getLocalLostFounds().observe(this) { lostfounds ->
-            loadLostFoundsToLayout(lostfounds)
+        viewModel.getLocalLostFounds().observe(this) { lostfound ->
+            loadLostFoundsToLayout(lostfound)
         }
     }
-    private fun loadLostFoundsToLayout(lostfounds: List<DelcomLostFoundEntity>?) {
+    private fun loadLostFoundsToLayout(lostfound: List<DelcomLostFoundEntity>?) {
         showLoading(false)
         val layoutManager = LinearLayoutManager(this)
         binding.rvLostFoundFavoriteLostFounds.layoutManager = layoutManager
@@ -79,14 +79,14 @@ class LostFoundFavoriteActivity : AppCompatActivity() {
             layoutManager.orientation
         )
         binding.rvLostFoundFavoriteLostFounds.addItemDecoration(itemDecoration)
-        if (lostfounds.isNullOrEmpty()) {
+        if (lostfound.isNullOrEmpty()) {
             showEmptyError(true)
             binding.rvLostFoundFavoriteLostFounds.adapter = null
         } else {
             showComponentNotEmpty(true)
             showEmptyError(false)
             val adapter = LostfoundAdapter()
-            adapter.submitOriginalList(entitiesToResponses(lostfounds))
+            adapter.submitOriginalList(entitiesToResponses(lostfound))
             binding.rvLostFoundFavoriteLostFounds.adapter = adapter
             adapter.setOnItemClickCallback(
                 object : LostfoundAdapter.OnItemClickCallback {
