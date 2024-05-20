@@ -17,7 +17,7 @@ data class DelcomLostFoundResponse(
 data class DataLostFoundResponse(
 
 	@field:SerializedName("lost_found")
-	val todo: LostFoundResponse
+	val lostfound: LostFoundResponse
 )
 
 data class LostFoundResponse(

@@ -64,11 +64,9 @@ class LostfoundAdapter :
                 tvItemLostFoundTitle.text = data.title
                 cbItemLostFoundIsFinished.isChecked = data.isCompleted == 1
                 val statusText = if (data.status.equals("found", ignoreCase = true)) {
-                    // Jika status "found", maka gunakan warna hijau
-                    highlightText("Found", Color.GREEN)
+                    highlightText("Found", Color.BLUE)
                 } else {
-                    // Jika status "lost", maka gunakan warna kuning
-                    highlightText("Lost", Color.YELLOW)
+                    highlightText("Lost", Color.RED)
                 }
                 // Menetapkan teks status yang sudah disorot ke TextView
                 tvStatus.text = statusText
